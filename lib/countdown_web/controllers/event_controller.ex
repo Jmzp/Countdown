@@ -5,8 +5,7 @@ defmodule CountdownWeb.EventController do
   alias Countdown.Events.Event
 
   plug :secure
-
-  #Antes de ejecutar cada endpoint se pasa  por esta funcion para verificar que el usuario este logueado
+  
   defp secure(conn, _params) do
     user = get_session(conn, :current_user)
     case user do
